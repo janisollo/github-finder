@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar icon="fab fa-github" title="Github Finder" />
-        <Users />
+        <div className="container">
+          <Users />
+        </div>
       </Fragment>
     );
   }
