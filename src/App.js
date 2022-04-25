@@ -1,22 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
+import Navbar from './components/layout/Navbar';
 
-class App  extends Component {
-  
+class App extends Component {
   render() {
-    const name = {
-      firstName: "Jani",
-      lastName: "Sollo"
-  }
-
-    return(
-
-    <Fragment>
-      <h1>Hello {name.firstName.toUpperCase()}</h1>
-    </Fragment>
-
-
-    )
+    return (
+      <Fragment>
+        <Navbar icon="fab fa-github" title="Github Finder" />
+      </Fragment>
+    );
   }
 }
 
