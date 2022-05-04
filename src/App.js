@@ -11,17 +11,17 @@ class App extends Component {
     loading: false,
   };
 
-  // async componentDidMount() {
-  //   // console.log(process.env.REACT_APP_GITHUB_CLIENT_ID);
+  async componentDidMount() {
+    // console.log(process.env.REACT_APP_GITHUB_CLIENT_ID);
 
-  //   this.setState({ loading: true });
+    this.setState({ loading: true });
 
-  //   const res = await axios.get(
-  //     `http://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`,
-  //   );
+    const res = await axios.get(
+      `http://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`,
+    );
 
-  //   this.setState({ users: res.data, loading: false });
-  // }
+    this.setState({ users: res.data, loading: false });
+  }
 
   // Search github users
 
