@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
@@ -52,20 +53,31 @@ class App extends Component {
   render() {
     const { users, loading } = this.state;
     return (
-      <Fragment>
-        <Navbar icon="fab fa-github" title="Github Finder" />
-
-        <div className="container">
-          <Alert alert={this.state.alert} />
-          <Search
-            searchUsers={this.searchUsers}
-            clearUsers={this.clearUsers}
-            showClear={users.length > 0 ? true : false}
-            setAlert={this.setAlert}
-          />
-          <Users loading={loading} users={users} />
+      <Router>
+        <div className="App">
+          <Navbar icon="fab fa-github" title="Github Finder" />
+          <div className="container">
+            <Alert alert={this.state.alert} />
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={
+                  <Fragment>
+                    <Search
+                      searchUsers={this.searchUsers}
+                      clearUsers={this.clearUsers}
+                      showClear={this.state.users.length > 0 ? true : false}
+                      setAlert={this.setAlert}
+                    />
+                    <Users loading={loading} users={users} />
+                  </Fragment>
+                }
+              />
+            </Routes>
+          </div>
         </div>
-      </Fragment>
+      </Router>
     );
   }
 }
