@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #23b8ad;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -20,7 +20,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
-  color: #333;
+  color: #555;
 }
 
 a {
